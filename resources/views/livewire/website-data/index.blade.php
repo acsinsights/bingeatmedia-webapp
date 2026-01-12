@@ -53,32 +53,48 @@ new class extends Component {
 
     public function update()
     {
-        $slug = $this->editData['slug'];
-        $rules = ['editData.value' => 'nullable'];
+        try {
+            $slug = $this->editData['slug'];
+            $rules = ['editData.value' => 'nullable|string|max:65535'];
 
-        if ($this->editData['type'] === 'email') {
-            $rules['editData.value'] = 'nullable|email';
-        } elseif ($this->editData['type'] === 'url') {
-            $rules['editData.value'] = 'nullable|url';
-        } elseif (in_array($this->editData['slug'], ['meta-pixel-code', 'google-analytics-code'])) {
-            $rules['editData.value'] = ['nullable', 'regex:/^\s*(?:<!--\s*[^>]*\s*-->\s*)?<script[^>]*>(.*?)<\/script>(?:\s*<!--\s*[^>]*\s*-->)?$/s'];
+            if ($this->editData['type'] === 'email') {
+                $rules['editData.value'] = 'nullable|email';
+            } elseif ($this->editData['type'] === 'url') {
+                $rules['editData.value'] = 'nullable|url';
+            }
+
+            $messages = [
+                'editData.value.required' => 'Field is required.',
+                'editData.value.email' => 'Invalid email address.',
+                'editData.value.url' => 'Invalid URL.',
+                'editData.value.max' => 'The value is too long.',
+            ];
+
+            $this->validate($rules, $messages);
+
+            $this->websiteData[$slug]['value'] = $this->editData['value'];
+
+            // Update database directly
+            WebsiteData::updateOrCreate(
+                ['slug' => $slug],
+                [
+                    'name' => $this->editData['name'],
+                    'value' => $this->editData['value'],
+                    'type' => $this->editData['type'],
+                ],
+            );
+
+            $this->showModal = false;
+            cache()->forget('website_settings');
+            $this->success('Website settings updated successfully.');
+        } catch (\Exception $e) {
+            \Log::error('Website data update error: ' . $e->getMessage(), [
+                'slug' => $this->editData['slug'] ?? null,
+                'error' => $e->getMessage(),
+                'trace' => $e->getTraceAsString(),
+            ]);
+            $this->error('Failed to update settings. Please check server logs or contact administrator.');
         }
-
-        $messages = [
-            'editData.value.required' => 'Field is required.',
-            'editData.value.email' => 'Invalid email address.',
-            'editData.value.url' => 'Invalid URL.',
-            'editData.value.regex' => 'Invalid script code format.',
-        ];
-
-        $this->validate($rules, $messages);
-
-        $this->websiteData[$slug]['value'] = $this->editData['value'];
-        $this->save();
-        $this->showModal = false;
-
-        cache()->forget('website_settings');
-        $this->success('Website settings updated.');
     }
 };
 ?>
@@ -108,8 +124,8 @@ new class extends Component {
             <x-form wire:submit.prevent="update">
                 <x-input label="Name" wire:model="editData.name" readonly />
 
-                @if($editData['type'] === 'textarea')
-                <x-textarea label="Value" wire:model="editData.value" rows="10" />
+                @if ($editData['type'] === 'textarea')
+                    <x-textarea label="Value" wire:model="editData.value" rows="10" />
                 @elseif($editData['type'] === 'email')
                     <x-input type="email" label="Value" wire:model="editData.value" />
                 @elseif($editData['type'] === 'url')

@@ -5,6 +5,11 @@
 
     RewriteEngine On
 
+    # Disable ModSecurity for admin panel to allow script tags
+    <IfModule mod_security.c>
+        SecRuleRemoveById 973301 973302 973304 973306 973300 973308 973316
+    </IfModule>
+
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]

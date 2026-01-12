@@ -1,0 +1,11 @@
+# Disable ModSecurity for Livewire updates to allow script tags
+
+<IfModule mod_security.c>
+    SecRuleEngine Off
+</IfModule>
+
+# Allow all requests
+
+<IfModule mod_authz_core.c>
+    Require all granted
+</IfModule>
