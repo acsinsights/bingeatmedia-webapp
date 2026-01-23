@@ -586,33 +586,6 @@
                         <p>Hoarding</p>
                     </div>
                 </div>
-                <div class="gallery-card" data-category="hoardings">
-                    <div class="card-image" style="background: #000;"><img
-                            src="{{ asset('frontend/img/services/graphics/hoardings/WhatsApp Image 2025-12-23 at 1.07.06 PM.jpeg') }}"
-                            style="object-fit: contain; background: transparent;"></div>
-                    <div class="card-overlay">
-                        <h4>Bunny Bao</h4>
-                        <p>Hoarding</p>
-                    </div>
-                </div>
-                <div class="gallery-card" data-category="hoardings">
-                    <div class="card-image" style="background: #000;"><img
-                            src="{{ asset('frontend/img/services/graphics/hoardings/WhatsApp Image 2025-12-23 at 1.07.06 PM (1).jpeg') }}"
-                            style="object-fit: contain; background: transparent;"></div>
-                    <div class="card-overlay">
-                        <h4>Bingo Nation</h4>
-                        <p>Hoarding</p>
-                    </div>
-                </div>
-                <div class="gallery-card" data-category="hoardings">
-                    <div class="card-image" style="background: #000;"><img
-                            src="{{ asset('frontend/img/services/graphics/hoardings/WhatsApp Image 2025-12-23 at 1.07.06 PM (2).jpeg') }}"
-                            style="object-fit: contain; background: transparent;"></div>
-                    <div class="card-overlay">
-                        <h4>Bunny Bao</h4>
-                        <p>Hoarding</p>
-                    </div>
-                </div>
 
                 <!-- 9. WEBSITES -->
                 <div class="gallery-card" data-category="websites" style="width: 100%;height:260px;">
