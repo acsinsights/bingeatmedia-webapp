@@ -73,7 +73,7 @@ new class extends Component {
             <!-- Login Form -->
             <x-form wire:submit="login">
                 <x-input label="E-mail" type="email" wire:model="email" icon="o-envelope"
-                    placeholder="admin@gmail.com" />
+                    placeholder="Enter Email" />
 
                 <x-password label="Password" wire:model="password" icon="o-lock-closed" placeholder="••••••••" right />
 

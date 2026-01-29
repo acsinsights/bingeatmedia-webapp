@@ -77,7 +77,7 @@
             <h3 class="DM-font">Contact Us</h3>
             <p>If you have any questions regarding this Privacy Policy, you can reach us at:</p>
             <ul>
-                <li>Phone: <a href="tel:+917219335227">+91 721 933 5227</a>, <a href="tel:+918087835227">+91
+                <li>Phone: <a href="tel:+918484935227">+91 84849 35227</a>, <a href="tel:+918087835227">+91
                         80878 35227</a></li>
                 <li>Email: <a href="mailto:hello@bingeatmedia.com">hello@bingeatmedia.com</a></li>
                 <li>Company: BingeAt Media</li>

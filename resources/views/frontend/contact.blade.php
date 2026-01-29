@@ -295,8 +295,8 @@
                             <i class="fa-solid fa-phone-volume"></i>
                         </div>
                         <div class="content">
-                            <h3>Hot:<a href="tel:+917219335227">+91 721 933 5227 </a></h3>
                             <h3>Hot:<a href="tel:+918087835227">+91 80878 35227 </a></h3>
+                            <h3>Hot:<a href="tel:+918484935227">+91 84849 35227 </a></h3>
                             <p>
                                 Call us for any support — we're here for you.
                             </p>
@@ -393,7 +393,7 @@
                     drive results. Get in touch with our team today!
                 </p>
                 <div class="gt-cta-buttons wow fadeInUp" data-wow-delay=".6s">
-                    <a href="tel:+917219335227" class="gt-theme-btn"
+                    <a href="tel:+918087835227" class="gt-theme-btn"
                         style="background-color: transparent; border: 2px solid #ffffff; color: #ffffff;">
                         Call Us Now
                     </a>

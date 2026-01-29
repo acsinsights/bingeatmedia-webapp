@@ -655,7 +655,8 @@
                 <h6
                     style="color: #8400c7; font-weight: 700; font-size: 16px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px;">
                     Our Insights</h6>
-                <h2 style="font-size: 48px;font-family:sans-serif !important; font-weight: 800; color: #1a1a1a; line-height: 1.2; margin-bottom: 20px;">
+                <h2
+                    style="font-size: 48px;font-family:sans-serif !important; font-weight: 800; color: #1a1a1a; line-height: 1.2; margin-bottom: 20px;">
                     Latest Blogs & Articles</h2>
                 <p style="color: #6b7280; font-size: 18px; line-height: 1.6;">Discover insights, tips, and stories about
                     digital marketing, branding, and creative solutions</p>
@@ -876,7 +877,7 @@
                                     </div>
                                     <div class="content">
                                         <h3>
-                                            <a href="tel:+91 721 933 5227">+91 721 933 5227</a> |
+                                            <a href="tel:+91 84849 35227">+91 84849 35227</a> |
                                             <a href="tel:+91 80878 35227">+91 80878 35227</a>
                                         </h3>
                                     </div>

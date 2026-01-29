@@ -84,7 +84,7 @@
                                 <li>
                                     <i class="fa-solid fa-phone-volume"></i>
                                     <a href="tel:+91 80878 35227">+91 80878 35227</a> |
-                                    <a href="tel:+91 721 933 5227">+91 721 933 5227</a>
+                                    <a href="tel:+91 84849 35227">+91 84849 35227</a>
                                 </li>
                             </ul>
                         </div>

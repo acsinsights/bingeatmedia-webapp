@@ -25,8 +25,13 @@ class AppServiceProvider extends ServiceProvider
         // Share meta tags and GTM codes with frontend layout
         View::composer('frontend.layouts.app', function ($view) {
             $metaTagsService = new MetaTagsService();
-            $blog = $view->getData()['blog'] ?? null;
-            $pageMeta = $view->getData()['pageMeta'] ?? null;
+            $viewData = $view->getData();
+
+            // Only use blog meta if 'useBlogMeta' flag is set (prevents foreach loop variables from being picked up)
+            $blog = isset($viewData['useBlogMeta']) && $viewData['useBlogMeta'] && isset($viewData['blog'])
+                ? $viewData['blog']
+                : null;
+            $pageMeta = $viewData['pageMeta'] ?? null;
             $metaTags = $metaTagsService->generateMetaTags($blog, $pageMeta);
 
             // Get all website data from database

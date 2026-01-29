@@ -46,6 +46,6 @@ class BlogController extends Controller
             ->limit(3)
             ->get();
 
-        return view('frontend.blogs.show', compact('blog', 'recentBlogs'));
+        return view('frontend.blogs.show', compact('blog', 'recentBlogs'))->with('useBlogMeta', true);
     }
 }
