@@ -866,8 +866,7 @@
                                     </div>
                                     <div class="content">
                                         <h3>
-                                            Address: Flat No.102, White House Building, <br>
-                                            Above AU Bank, Khodaram Baug, Boisar – 401501
+                                            Address: White House Building,Above AU Bank, Khodaram Baug,Boisar – 401501
                                         </h3>
                                     </div>
                                 </div>
