@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\frontend\PageController;
 use App\Http\Controllers\frontend\BlogController;
+use App\Http\Controllers\SitemapController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,3 +44,6 @@ Route::get('/terms', [PageController::class, 'termsOfService'])->name('terms');
 Route::post('/contact/submit', [PageController::class, 'submitContact'])->name('frontend.contact.submit');
 Route::post('/consultation/submit', [PageController::class, 'submitConsultation'])->name('frontend.consultation.submit');
 Route::post('/enquiry/submit', [PageController::class, 'submitEnquiry'])->name('frontend.enquiry.submit');
+
+// Sitemap
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
